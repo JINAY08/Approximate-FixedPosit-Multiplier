@@ -100,3 +100,8 @@ cc -fPIC -shared -o lib_mine.so {name of C file} -lm -fopenmp -std=c99
 python3 run_posit.py {network name} {dataset} posit
 python3 ../scripts/accuracy.py
 ```
+If the file names are not changed, 
+
+->{name of C file} == test_posit.c
+->{network name} == lenet/resnet18/any other network supported
+->{dataset} == mnist/cifar10/imagenet
