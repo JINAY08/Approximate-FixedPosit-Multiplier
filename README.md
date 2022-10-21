@@ -82,3 +82,10 @@ python3 resnet18_cifar10_posit.py
 ```
 
 This will create the tensors required.
+
+After this, go to the framework directory. You could use the following command:
+
+```bash
+cd ..
+cd framework/
+```
