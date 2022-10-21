@@ -45,3 +45,20 @@ To compute success rate of attacks, run
 cd scripts/
 python3 success_rate_script_new.py
 ```
+
+# Updated Framework
+The following files have been added to the framework:
+-> test_posit.c (Updated) : The number of multipliers that are supported has been increased. You could change the multiplier used to multiply dot_pro in the convolution operation (convol function).
+->test_posit_compressor: Includes approximate multiplier designs designed using compressors (8x8 unsigned integer). Change the compressor used in the {approx_multiplier} function wherever it is found. (Ctrl-F would be an easy way).
+Includes the following compressors:
+-Yang1,Yang2,Yang3
+-Lin
+-Strollo1, Strollo2
+-Momeni
+-Sabetz
+-Venka
+-Akbar1, Akbar2
+-Ahma
+-Ranjbar1, Ranjbar2, Ranjbar3
+
+For changing the operand order, you could swap the order inside {approx_multiply} function, where the {approx_multiplier} is being called.
