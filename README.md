@@ -83,9 +83,20 @@ python3 resnet18_cifar10_posit.py
 
 This will create the tensors required.
 
-After this, go to the framework directory. You could use the following command:
+Also open `accuracy.py` file and change the name of the csv file where you want to save the actual tensors and the predicted tensors.
+
+After this, go to the {framework} directory. You could use the following command:
 
 ```bash
 cd ..
 cd framework/
+```
+If you want to run the simulations for accuracy when using a particular multiplier, go to the `test_posit.c` file and make sure that the multiplier is defined. You could change the multiplier when multiplying dot_pro in the {convol} function.
+
+After the required changes are made, open `script_posit.sh` file and change it as follows:
+
+```bash
+cc -fPIC -shared -o lib_mine.so {name of C file} -lm -fopenmp -std=c99
+python3 run_posit.py {network name} {dataset} posit
+python3 ../scripts/accuracy.py
 ```
