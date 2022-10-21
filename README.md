@@ -59,6 +59,11 @@ For changing the operand order, you could swap the order inside {approx_multiply
 
 
 # Steps for determining accuracy:
+Before starting, you might need to create a virtual environment and make sure all requirements are imported. As an example, after creating the virtual environment:
+ ```bash
+ source ~/virtualenv/bin/activate
+ ```
+ 
 -> For generating tensors:
 
 Create a folder named `lenet_mnist` or `resnet18_cifar10` inside the {results} directory based on the network you want to run simulations for. Run the following commands:
