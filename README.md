@@ -64,3 +64,19 @@ Includes the following compressors:
 -Ranjbar1, Ranjbar2, Ranjbar3
 
 For changing the operand order, you could swap the order inside {approx_multiply} function, where the {approx_multiplier} is being called.
+
+
+# Steps for determining accuracy:
+-> For generating tensors:
+
+Create a folder named {lenet_mnist} or {resnet18_cifar10} based on the network you want to run simulations for. Run the following commands:
+
+```cd scripts/
+python3 lenet_mnist_posit.py
+```
+OR
+```cd scripts/
+python3 resnet18_cifar10_posit.py
+```
+
+This will create the tensors required.
