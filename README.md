@@ -97,3 +97,9 @@ If the file names are not changed,
 - {name of C file} == test_posit.c
 - {network name} == lenet/resnet18/any other network supported
 - {dataset} == mnist/cifar10/imagenet
+
+Finally, run the following command:
+
+```bash
+sh script_posit.sh
+```
