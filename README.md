@@ -108,3 +108,11 @@ Finally, run the following command:
 ```bash
 sh script_posit.sh
 ```
+
+# Compressor-based Approx-Fixed Posit
+
+-> For running simulations using approximate fixed-posit multiplier, you would need to use `posit_fixmultiply` function in the {test_posit_compressor.c} file. Change it in the convolution function.
+
+->For changing the Posit parameters, you could change it at the parameters defined at the beginning of the function.
+
+-> Rest of the steps remain the same.
