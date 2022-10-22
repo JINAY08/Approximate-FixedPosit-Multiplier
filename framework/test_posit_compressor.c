@@ -2485,7 +2485,7 @@ float posit_fixmultiply(float op1, float op2)
         }
     }
 
-    frc_new = approx_multiply(op1_frc_new,op2_frc_new);
+    frc_new = op1_frc_new * op2_frc_new;
 
     if(frc_new >=2)
     {
