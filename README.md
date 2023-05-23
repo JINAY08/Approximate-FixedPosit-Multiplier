@@ -48,7 +48,7 @@ python3 success_rate_script_new.py
 
 # Updated Framework
 The following files have been added to the framework:
-- test_posit.c (Updated) : The number of multipliers that are supported has been increased. You could change the multiplier used to multiply dot_pro in the convolution operation (convol function).
+- test_posit.c (Updated) : The types of multipliers that are supported have been increased. You could change the multiplier used to multiply dot_pro in the convolution operation (convol function).
 
 - test_posit_compressor: Includes approximate multiplier designs designed using compressors (8x8 unsigned integer). Change the compressor used in the {approx_multiplier} function wherever it is found. (Ctrl-F would be an easy way).
 
