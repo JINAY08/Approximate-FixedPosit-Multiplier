@@ -10,41 +10,7 @@ Directory Structure:
 - scripts  : Contains scripts for running various experiments, contains script to find accuracy also
 - tensors  : Contains tensors of generated adversarial images
 
-## Generating adversarial images
 
-To add adversarial noise to images run the files in scripts directory with following format : {model}\_{dataset}\_{attack}\_tensor.py
-For example to add adversarial noise of fgsm attack for resnet18 on cifar10, run the commands below:
-```bash
-cd scripts/
-python3 resnet18_cifar10_fgsm_tensor.py
-```
-Running these scripts will generate tensors of attacked images and stores them in tensors directory. They will also generate a file named {attack}\_{model}\_{dataset}\_tensor\_result.csv in the results directory. These files will have information of the ground truth, prediction before attack and prediction after attack for all the images. This information is useful to identify teh adversarial images since all attacked images might not be adversarial.
-
-Then to identify adversarial images run
-```bash
-cd scripts/
-python3 adv_img_collector_tensor.py
-```
-Running this script will generate files named advimgnums_{attack}\_{model}\_{dataset}\_tensor.csv in the results directory. These files contain information only for adversarial images.
-
-## Inferencing on adversarial images with approximate hardware
-To generate script to perform inference on adversarial images with approximate designs run the following
-```bash
-cd framework
-python3 scriptmaker.py
-```
-
-This will generate a `script.sh` file. Run it using
-```bash
-cd framework
-sh script.sh
-```
-
-To compute success rate of attacks, run
-```bash
-cd scripts/
-python3 success_rate_script_new.py
-```
 
 # Updated Framework
 The following files have been added to the framework:
@@ -116,3 +82,39 @@ sh script_posit.sh
 ->For changing the Posit parameters, you could change it at the parameters defined at the beginning of the function.
 
 -> Rest of the steps remain the same.
+
+## Generating adversarial images
+
+To add adversarial noise to images run the files in scripts directory with following format : {model}\_{dataset}\_{attack}\_tensor.py
+For example to add adversarial noise of fgsm attack for resnet18 on cifar10, run the commands below:
+```bash
+cd scripts/
+python3 resnet18_cifar10_fgsm_tensor.py
+```
+Running these scripts will generate tensors of attacked images and stores them in tensors directory. They will also generate a file named {attack}\_{model}\_{dataset}\_tensor\_result.csv in the results directory. These files will have information of the ground truth, prediction before attack and prediction after attack for all the images. This information is useful to identify teh adversarial images since all attacked images might not be adversarial.
+
+Then to identify adversarial images run
+```bash
+cd scripts/
+python3 adv_img_collector_tensor.py
+```
+Running this script will generate files named advimgnums_{attack}\_{model}\_{dataset}\_tensor.csv in the results directory. These files contain information only for adversarial images.
+
+## Inferencing on adversarial images with approximate hardware
+To generate script to perform inference on adversarial images with approximate designs run the following
+```bash
+cd framework
+python3 scriptmaker.py
+```
+
+This will generate a `script.sh` file. Run it using
+```bash
+cd framework
+sh script.sh
+```
+
+To compute success rate of attacks, run
+```bash
+cd scripts/
+python3 success_rate_script_new.py
+```
